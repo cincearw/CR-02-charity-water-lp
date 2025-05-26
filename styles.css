@@ -1,19 +1,16 @@
-/* Set a background image for the whole page */
+/* Set a plain background for the whole page */
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    /* Use the provided background image */
-    background-image: url('charity_water_imagine.jpg');
-    background-size: cover;
-    background-position: center;
+    background: #f4f8fb; /* Use a simple color as default */
     min-height: 100vh;
 }
 
 /* Navigation bar styles */
 .navbar {
     width: 100%;
-    background: rgba(255,255,255,0.95);
+    background: #000000; /* Changed to dark color */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -45,7 +42,7 @@ body {
 
 .nav-btn {
     text-decoration: none;
-    color: #222;
+    color: #cbccd1; /* Changed to light gray */
     background: none;
     border: none;
     font-size: 1em;
@@ -68,7 +65,7 @@ body {
 /* Sign in button */
 .sign-in-btn {
     text-decoration: none;
-    color: #2d9cdb;
+    color: #cbccd1; /* Changed to light gray */
     background: none;
     border: none;
     font-size: 1em;
@@ -86,7 +83,7 @@ body {
     display: inline-block;
     width: 2px;
     height: 24px;
-    background: #b3e0f7;
+    background: #cbccd1; /* Changed to match text color */
     margin: 0 8px;
     border-radius: 1px;
 }
@@ -95,7 +92,7 @@ body {
 .give-btn {
     text-decoration: none;
     color: white;
-    background: #2d9cdb;
+    background: #bf6c46; /* Changed to new color */
     font-weight: bold;
     padding: 8px 18px;
     border-radius: 20px;
@@ -106,75 +103,106 @@ body {
 }
 
 .give-btn:hover {
-    background: #238ac9;
+    background: #a85d3c; /* Slightly darker for hover */
 }
 
 .emoji {
     margin-left: 5px;
 }
 
-/* Main content area */
+/* Main content area (first page) */
 .main-content {
+    /* Add background image only to the first page */
+    background-image: url('img/charity_water_image.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+    /* Make the background start at the very top, under the navbar */
+    margin: 0;
+    /* Use flex to move content to the right */
     display: flex;
-    justify-content: flex-start;
+    justify-content: flex-end; /* Move content to the right */
     align-items: flex-start;
-    margin: 60px 0 0 0;
     padding: 0 5%;
-    min-height: 300px;
+    position: relative; /* Needed for bold bar absolute positioning */
 }
 
-/* Call to action box on the left */
+/* Call to action text styles */
 .call-to-action {
-    background: rgba(255,255,255,0.95);
-    padding: 30px 24px;
-    border-radius: 10px;
-    max-width: 400px;
-    box-shadow: 0 2px 8px rgba(63,69,81,0.10);
-    margin-right: 30px;
+    /* Only take up the right half of the screen */
+    width: 33%;
+    /* Remove background and box styles to make it invisible */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    max-width: none;
+    margin-right: 0;
 }
 
 .call-to-action h1 {
+    /* Use Proxima Nova, fallback to Arial if not available */
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 44px; /* Set font size to 44px */
+    font-weight: bold; /* Make text bold */
     margin-top: 0;
-    color: #2d9cdb;
+    color: #1a1a1a; /* Set text color to dark */
 }
 
 .call-to-action p {
-    color: #333;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 20px; /* Optional: make paragraph text a bit larger */
+    color: #1a1a1a; /* Set text color to dark */
+    width: 85%; /* Only take up 25% of the container's width */
 }
 
 /* Sub call to action on the right */
 .sub-call-to-action {
-    background: rgba(255,255,255,0.85);
-    padding: 24px 18px;
-    border-radius: 10px;
-    max-width: 300px;
+    /* Remove background and box styles to make it invisible */
+    background: none;
+    box-shadow: none;
+    padding: 0;
+    border-radius: 0;
+    max-width: none;
     margin-top: 30px;
-    box-shadow: 0 2px 8px rgba(63,69,81,0.08);
 }
 
 .sub-call-to-action h2 {
+    /* Use Proxima Nova, fallback to Arial if not available */
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 44px; /* Set font size to 44px */
+    font-weight: bold; /* Make text bold */
     margin-top: 0;
     color: #238ac9;
 }
 
 .sub-call-to-action p {
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 20px; /* Optional: make paragraph text a bit larger */
     color: #444;
 }
 
-/* Bold bar below the call to action */
+/* Bold bar below the call to action - now stays at the bottom of the first page */
 .bold-bar {
-    width: 100%;
-    background: #2d9cdb;
-    color: white;
+    width: 33%; /* Match the width of the call-to-action */
+    position: absolute; /* Place at bottom of first page section */
+    right: 5%; /* Align with the right side like .main-content padding */
+    bottom: 20px; /* 20px from the bottom of .main-content */
+    left: auto;
+    margin: 0;
+    background: #1a1a1a;
+    color: #cbccd1;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-size: 16px;
     font-weight: bold;
-    font-size: 1.2em;
     padding: 18px 0;
-    margin-top: 50px;
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 30px;
+    border-radius: 10px;
+    z-index: 10;
 }
 
 .bold-text {
@@ -183,8 +211,8 @@ body {
 
 .learn-more-btn {
     text-decoration: none;
-    background: white;
-    color: #2d9cdb;
+    background: #bf6c46; /* Set button background to orange */
+    color: #cbccd1; /* Button text color */
     padding: 10px 22px;
     border-radius: 20px;
     font-weight: bold;
@@ -194,6 +222,223 @@ body {
 }
 
 .learn-more-btn:hover {
-    background: #e0f4fd;
-    color: #238ac9;
+    background: #a85d3c;
+    color: white;
+}
+
+/* Second page background */
+.second-page {
+    background: url('img/Zimbabwe_2022_CG-8012.jpg');
+    background-size: cover;
+    background-position: center;
+    margin-top: 0;
+    min-height: 100vh;
+    position: relative; /* Needed for absolute positioning of donation-area */
+    /*padding: 60px 0 120px 0; /* Top and bottom padding */
+    min-height: 600px;
+    /*width: 100%;
+    position: relative;*/
+}
+
+/* Donation area with box on right */
+.donation-area {
+    display: flex;
+    flex-direction: column; /* Stack toggle and box vertically */
+    align-items: flex-end;  /* Align both to the right */
+    width: 100%;
+    /* Place the donation area at the bottom of the second page */
+    position: absolute;
+    bottom: 40px; /* 40px from the bottom of the page */
+    right: 0;
+    left: 0;
+    margin: 0;
+}
+
+/* Toggle buttons above the box - remove absolute positioning */
+.donation-toggle {
+    display: flex;
+    gap: 16px;
+    justify-content: flex-end;
+    margin-bottom: 24px;
+    margin-right: 10%;
+    /* Make the buttons bigger */
+}
+
+.toggle-btn {
+    background: #e0e7ef;
+    color: #1a1a1a;
+    border: none;
+    border-radius: 24px;
+    padding: 18px 40px; /* Bigger buttons */
+    font-size: 1.2em;   /* Bigger text */
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+/* Donation box styles */
+.donation-box {
+    background: white;
+    border-radius: 14px;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.10);
+    width: 340px;
+    padding: 0 24px 32px 24px;
+    margin-right: 10%;
+    margin-top: 20px; /* Add space between toggle and box */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Top bar of the donation box */
+.donation-box-top {
+    width: 100%;
+    background: #e0e7ef;
+    color: #1a1a1a;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 16px 0;
+    border-radius: 14px 14px 0 0;
+    text-align: center;
+    margin-bottom: 18px;
+}
+
+/* Amount buttons inside the box */
+.donation-amounts {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.amount-btn {
+    background: #f4f8fb;
+    color: #1a1a1a;
+    border: 1px solid #bf6c46;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 1em;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    width: 60px;
+}
+
+.amount-btn:hover {
+    background: #bf6c46;
+    color: white;
+}
+
+/* Other Amount button */
+.other-amount-btn {
+    background: #bf6c46;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 0;
+    font-size: 1em;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-weight: bold;
+    width: 90%;
+    margin: 10px 0 10px 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.other-amount-btn:hover {
+    background: #a85d3c;
+}
+
+/* Custom amount input box */
+.custom-amount-input {
+    width: 85%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    margin-top: 8px;
+}
+
+/* Donate button inside the donation box */
+.donate-btn-box {
+    background: #bf6c46;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 14px 0;
+    font-size: 1.1em;
+    font-family: 'Proxima Nova', Arial, sans-serif;
+    font-weight: bold;
+    width: 95%; /* Slightly smaller than the box width */
+    margin: 16px 0 0 0;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: block;
+    text-align: center;
+}
+
+.donate-btn-box:hover {
+    background: #a85d3c;
+}
+
+/* Responsive styles for tablets and phones */
+@media (max-width: 900px) {
+    .main-content,
+    .donation-area {
+        padding: 0 2%;
+    }
+    .call-to-action,
+    .bold-bar {
+        width: 80%;
+        right: 2%;
+    }
+    .donation-box {
+        width: 95%;
+        margin-right: 2%;
+    }
+    .donation-toggle {
+        margin-right: 2%;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-content {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 0 1%;
+    }
+    .call-to-action {
+        width: 98%;
+        font-size: 1em;
+    }
+    .bold-bar {
+        width: 98%;
+        right: 1%;
+        font-size: 14px;
+        padding: 12px 0;
+    }
+    .donation-area {
+        align-items: center;
+        padding: 0 1%;
+        left: 0;
+        right: 0;
+    }
+    .donation-toggle {
+        flex-direction: column;
+        align-items: stretch;
+        margin-right: 0;
+        gap: 10px;
+    }
+    .donation-box {
+        width: 98%;
+        margin-right: 0;
+    }
+    .donate-btn-box,
+    .other-amount-btn {
+        width: 98%;
+    }
 }

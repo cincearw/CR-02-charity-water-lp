@@ -13,7 +13,7 @@
         <!-- Logo on the left -->
         <div class="logo">
             <!-- Use an image for the logo -->
-            <img src="cw_logo-2.png" alt="Charity:Water Logo" class="logo-img">
+            <img src="img/charity_water_logo.jpg" alt="Charity:Water Logo" class="logo-img">
         </div>
         <!-- Navigation buttons in the middle -->
         <div class="nav-buttons">
@@ -31,16 +31,12 @@
 
     <!-- Main content area -->
     <div class="main-content">
-        <!-- Call to action box on the left -->
+        <!-- Call to action text on the right side -->
         <div class="call-to-action">
-            <h1>Help Bring Clean Water to Everyone</h1>
-            <p>Together, we can make a difference. Join us in our mission to provide safe water to communities in need.</p>
+            <h1>You're Not Just Donating. You're Disrupting Injustice.</h1>
+            <p>Support clean water projects that fuel education, health, and equity - See your impact. Fuel systemic change.</p>
         </div>
-        <!-- Sub call to action on the right -->
-        <div class="sub-call-to-action">
-            <h2>Every Drop Counts</h2>
-            <p>Your support changes lives. Start your journey with us today!</p>
-        </div>
+        <!-- You can add more content here on the left if needed -->
     </div>
 
     <!-- Bold bar below the call to action -->
@@ -48,5 +44,65 @@
         <span class="bold-text">Water is just the start</span>
         <a href="#" class="learn-more-btn">Learn More</a>
     </div>
+
+    <!-- Second page section starts here -->
+    <div class="second-page">
+
+        <!-- Donation area starts here -->
+        <div class="donation-area">
+            <!-- Toggle buttons for giving type -->
+            <div class="donation-toggle">
+                <button class="toggle-btn active" id="give-once-btn" onclick="showGiveOnce()">Give once</button>
+                <button class="toggle-btn" id="monthly-btn" onclick="showMonthly()">Monthly</button>
+            </div>
+            <!-- Donation box on the right -->
+            <div class="donation-box">
+                <!-- Top bar of the box -->
+                <div class="donation-box-top">
+                    Choose an amount to give
+                </div>
+                <!-- Donation amount buttons -->
+                <div class="donation-amounts" id="donation-amounts">
+                    <!-- Default: Give once options -->
+                    <button class="amount-btn">$10</button>
+                    <button class="amount-btn">$25</button>
+                    <button class="amount-btn">$50</button>
+                    <button class="amount-btn">$100</button>
+                </div>
+                <!-- Other Amount button -->
+                <button class="other-amount-btn">Other Amount</button>
+                <!-- Input box for custom amount -->
+                <input class="custom-amount-input" type="text" placeholder="Enter other amount (USD)">
+                <!-- Donate button for both give once and monthly -->
+                <button class="donate-btn-box">Donate</button>
+            </div>
+        </div>
+        <!-- Donation area ends here -->
+    </div>
+    <!-- Second page section ends here -->
+
+    <!-- Add a simple script for beginners to switch between options -->
+    <script>
+    // Show "Give once" options
+    function showGiveOnce() {
+        document.getElementById('donation-amounts').innerHTML =
+            '<button class="amount-btn">$10</button>' +
+            '<button class="amount-btn">$25</button>' +
+            '<button class="amount-btn">$50</button>' +
+            '<button class="amount-btn">$100</button>';
+        document.getElementById('give-once-btn').classList.add('active');
+        document.getElementById('monthly-btn').classList.remove('active');
+    }
+    // Show "Monthly" options
+    function showMonthly() {
+        document.getElementById('donation-amounts').innerHTML =
+            '<button class="amount-btn">$5</button>' +
+            '<button class="amount-btn">$15</button>' +
+            '<button class="amount-btn">$30</button>' +
+            '<button class="amount-btn">$50</button>';
+        document.getElementById('give-once-btn').classList.remove('active');
+        document.getElementById('monthly-btn').classList.add('active');
+    }
+    </script>
 </body>
 </html>

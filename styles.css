@@ -1,19 +1,199 @@
-/* charity: water Brand Colors & Fonts
+/* Set a background image for the whole page */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    /* Use the provided background image */
+    background-image: url('charity_water_imagine.jpg');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh;
+}
 
-Primary Colors:
-- Yellow:     #FFC907
-- Blue:       #2E9DF7
+/* Navigation bar styles */
+.navbar {
+    width: 100%;
+    background: rgba(255,255,255,0.95);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.10);
+}
 
-Secondary Colors:
-- Light Blue: #8BD1CB
-- Green:      #4FCB53
-- Orange:     #FF902A
-- Red:        #F5402C
-- Dark Green: #159A48
-- Pink:       #F16061
+/* Logo on the left */
+.logo {
+    /* Remove text color and font styles for image logo */
+    display: flex;
+    align-items: center;
+}
 
-Fonts:
-- Proxima Nova
-- Avenir
+/* Style for the logo image */
+.logo-img {
+    /* Set a simple height for the logo image */
+    height: 40px;
+    /* Add a little space to the right if needed */
+    /* margin-right: 8px; */
+}
 
-*/
+/* Navigation buttons in the middle */
+.nav-buttons {
+    display: flex;
+    gap: 18px;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: #222;
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.nav-btn:hover {
+    background: #e0f4fd;
+}
+
+/* Right side of navbar */
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Sign in button */
+.sign-in-btn {
+    text-decoration: none;
+    color: #2d9cdb;
+    background: none;
+    border: none;
+    font-size: 1em;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.sign-in-btn:hover {
+    background: #e0f4fd;
+}
+
+/* Vertical bar separator */
+.nav-bar {
+    display: inline-block;
+    width: 2px;
+    height: 24px;
+    background: #b3e0f7;
+    margin: 0 8px;
+    border-radius: 1px;
+}
+
+/* Give button */
+.give-btn {
+    text-decoration: none;
+    color: white;
+    background: #2d9cdb;
+    font-weight: bold;
+    padding: 8px 18px;
+    border-radius: 20px;
+    margin-left: 5px;
+    transition: background 0.2s;
+    border: none;
+    font-size: 1em;
+}
+
+.give-btn:hover {
+    background: #238ac9;
+}
+
+.emoji {
+    margin-left: 5px;
+}
+
+/* Main content area */
+.main-content {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 60px 0 0 0;
+    padding: 0 5%;
+    min-height: 300px;
+}
+
+/* Call to action box on the left */
+.call-to-action {
+    background: rgba(255,255,255,0.95);
+    padding: 30px 24px;
+    border-radius: 10px;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.10);
+    margin-right: 30px;
+}
+
+.call-to-action h1 {
+    margin-top: 0;
+    color: #2d9cdb;
+}
+
+.call-to-action p {
+    color: #333;
+}
+
+/* Sub call to action on the right */
+.sub-call-to-action {
+    background: rgba(255,255,255,0.85);
+    padding: 24px 18px;
+    border-radius: 10px;
+    max-width: 300px;
+    margin-top: 30px;
+    box-shadow: 0 2px 8px rgba(63,69,81,0.08);
+}
+
+.sub-call-to-action h2 {
+    margin-top: 0;
+    color: #238ac9;
+}
+
+.sub-call-to-action p {
+    color: #444;
+}
+
+/* Bold bar below the call to action */
+.bold-bar {
+    width: 100%;
+    background: #2d9cdb;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2em;
+    padding: 18px 0;
+    margin-top: 50px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.bold-text {
+    font-size: 1.2em;
+}
+
+.learn-more-btn {
+    text-decoration: none;
+    background: white;
+    color: #2d9cdb;
+    padding: 10px 22px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: background 0.2s, color 0.2s;
+    border: none;
+}
+
+.learn-more-btn:hover {
+    background: #e0f4fd;
+    color: #238ac9;
+}
